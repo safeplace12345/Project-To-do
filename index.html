@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- facebook icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- bootstrap4 -->
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Project To-do</title>
+</head>
+
+<body>
+    <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+        <!-- App title section -->
+        <div class="row m-1 p-4">
+            <div class="col">
+                <div class="p-1 h1 text-primary text-center mx-auto display-inline-block">
+                    <i class="fa fa-check bg-primary text-white rounded p-2"></i>
+                    <u>Awesome To-Do's</u>
+                </div>
+            </div>
+        </div>
+        <!-- Create todo section -->
+        <div class="row m-1 p-3">
+            <div class="col col-11 mx-auto ">
+                <div
+                    class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                    <div class="col border">
+                        <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded"
+                            type="text" placeholder="Add new To-do.." id="newTodoInput">
+                    </div>
+                    <div class="col-auto m-0 px-2 d-flex align-items-center">
+
+                        <input type="date" name="date" id="inputTodoDate"
+                            class="my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip"
+                            data-placement="bottom" title="Set a Due date">
+
+                    </div>
+                    <div class="col-auto px-0 mx-0 mr-2">
+                        <button type="button" class="btn btn-primary" id="addTo-dobtn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 mx-4 border-black-25 border-bottom"></div>
+        <div class="my-3 d-flex justify-content-around">
+            <div class="dropdown ">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">View All
+                    Tasks</button>
+                <div class="dropdown-menu viewAllTasks">
+                    <li class="dropdown-item">Default</li>
+                </div>
+            </div>
+            <div class="dropdown ">
+                <button class="btn btn-success dropdown-toggle viewAllTodos" type="button" data-toggle="dropdown">View
+                    All
+                    To-do's</button>
+                <div class="dropdown-menu allTodos">
+                    <li class="dropdown-item">Default</li>
+                </div>
+            </div>
+            <div class="dropdown ">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">View All
+                    Project</button>
+                <div class="dropdown-menu viewAllProjects">
+                    <a class="dropdown-item">Default</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-11 mx-auto border">
+            <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                <div class="col border">
+                    <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded"
+                        type="text" placeholder="Add new Project.." id="newProject">
+                </div>
+                <div class="col-auto m-0 px-2 d-flex align-items-center">
+                </div>
+                <div class="col-auto px-0 mx-0 mr-2">
+                    <button type="button" class="btn btn-primary" id="addNewProject">Create New Project</button>
+                </div>
+            </div>
+        </div>
+        <!-- View options section -->
+        <div class="row m-1 p-3 px-5 justify-content-end border">
+            <!--         filter section -->
+            <div class="col-auto d-flex align-items-center">
+                <label class="text-secondary my-2 pr-2 view-opt-label">Filter</label>
+                <select class="custom-select custom-select-sm btn my-2">
+                    <option value="all" selected>All</option>
+                    <option value="completed">Completed</option>
+                    <option value="active">Active</option>
+                    <option value="has-due-date">Has due date</option>
+                </select>
+            </div>
+            <!--         sort section -->
+            <div class="col-auto d-flex align-items-center px-1 pr-3">
+                <label class="text-secondary my-2 pr-2 view-opt-label">Sort</label>
+                <select class="custom-select custom-select-sm btn my-2">
+                    <option value="added-date-asc" selected>Added date</option>
+                    <option value="due-date-desc">Due date</option>
+                </select>
+                <i class="fas fa-sort-amount-up-alt mx-1" data-toggle="tooltip" data-placement="bottom"
+                    title="Ascending 0r Descending"></i>
+            </div>
+        </div>
+        <!-- Todo list section -->
+            <div id="todo-container">
+
+            </div>
+          
+            <script src="./main.js"></script>
+</body>
+
+</html>
